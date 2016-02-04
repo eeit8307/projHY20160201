@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/20 ?U?? 03:17:11 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._21_Store_In_ClassVO" table="Store_In_Class">
+        <id name="no">
+            <column name="no" />
+            <generator class="identity" />
+        </id>
+        
+ 
+            
+        <many-to-one name="storeVO" class="module.model._07_StoreVO" lazy="false">
+               <column name="store_no"/>
+        </many-to-one>
+       
+       <many-to-one name="store_classVO" class="module.model._06_Store_ClassVO" lazy="false">
+               <column name="class_store"/>
+        </many-to-one>
+       
+    </class>
+</hibernate-mapping>

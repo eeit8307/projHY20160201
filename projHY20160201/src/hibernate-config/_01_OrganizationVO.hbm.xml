@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/21 ?U?? 07:48:56 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._01_OrganizationVO" table="ORGANIZATION">
+       <id name="org_id" column="org_id"></id>
+       <property name="org_name" column="org_name"/>
+       <property name="discription" column="discription"/>
+       <property name="parent" column="parent"/>
+       <set name="emps" table="employee" lazy="true" cascade="all" inverse="false">
+        	<key><column name="dep_id" /></key>
+        	<one-to-many class="module.model._04_EmployeeVO"/>
+       </set>
+       
+    </class>
+</hibernate-mapping>

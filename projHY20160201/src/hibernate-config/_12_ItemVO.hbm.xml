@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/13 ?U?? 03:33:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._12_ItemVO" table="item">
+        <id name="item_no">
+            <column name="item_no" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="storeVO" class="module.model._07_StoreVO" lazy="false">
+        	<column name="store_no"/>
+        </many-to-one>
+        <many-to-one name="class_firstVO" class="module.model._09_Class_FirstVO" lazy="false">
+        	<column name="class1_no"/>
+        </many-to-one>
+        <property name="item_name" column="item_name"/>
+        <property name="pic" column="pic"/>
+        <set name="item_prices" table="item_price" lazy="true" cascade="all" inverse="false">
+        	<key><column name="item_no"/></key>
+        	<one-to-many class="module.model._15_Item_PriceVO"/>
+        </set>
+        <set name="item_class_thirds" table="item_class_third" lazy="true" cascade="all" inverse="false">
+        	<key><column name="item_no"/></key>
+        	<one-to-many class="module.model._13_Item_Class_ThirdVO"/>
+        </set>
+<!-- 		<property name="store_no" column="store_no"></property> -->
+<!--         <property name="class1_no" column="class1_no"></property> -->
+        
+        
+    </class>
+</hibernate-mapping>

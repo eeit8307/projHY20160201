@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">1234</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proj</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        
+<!--         <property name="hibernate.connection.datasource">java:comp/env/jdbc/xxx</property>   -->
+<!--         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> -->
+<!-- 		<property name="hibernate.current_session_context_class">thread</property> -->
+        
+        <mapping resource="hibernate-config/_01_OrganizationVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_02_Employee_StatusVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_03_JobVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_04_EmployeeVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_05_AdminVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_06_Store_ClassVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_07_StoreVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_08_EvaluateVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_09_Class_FirstVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_10_Class_SecondVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_11_Class_ThirdVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_12_ItemVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_13_Item_Class_ThirdVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_14_SizeVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_15_Item_PriceVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_16_Group_RecordVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_17_Group_UserVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_18_Order_DetailVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_19_FavoriteVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_20_Favorite_DetailVO.hbm.xml"/>
+        <mapping resource="hibernate-config/_21_Store_In_ClassVO.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>

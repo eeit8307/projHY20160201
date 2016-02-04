@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/19 ?U?? 05:16:20 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._11_Class_ThirdVO" table="class_third">   			 
+					<!--第一個欄位 主鍵  -->
+        <id name="class3_no" column="CLASS3_NO">
+			<generator class="identity"/>
+		</id>
+       				<!--第二個欄位-->
+        <property name="class3_name" column="CLASS3_NAME" />	
+        
+					 <!--第三個欄位  FK-->
+<!--         <property name="class2_no" column="CLASS2_NO" /> -->
+        
+					<!-- 多對一   10表-->
+		<many-to-one name="class_SecondVO" class="module.model._10_Class_SecondVO" lazy="false">
+            <column name="class2_no" />
+        </many-to-one>
+
+
+				    <!-- 一對多  13表 --> 
+        <set name="Item_Class_Thirds" table="ITEM_CLASS_THIRD" lazy="true" cascade="all"  inverse="false" >			
+			<key>
+				<column name="class3_no" />
+			</key>
+			<one-to-many class="module.model._13_Item_Class_ThirdVO" />				                    	                    	
+		</set>		
+			
+			<!-- 一對多  20表 --> 
+        <set name="Favorite_Details" table="favorite_detail" lazy="true" cascade="all"  inverse="false" >
+                   			
+			<key>
+				<column name="class3_no" />
+			</key>
+			<one-to-many class="module.model._20_Favorite_DetailVO" />			                                     		                    	                    	
+		</set>	
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/20 ?U?? 03:17:11 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._07_StoreVO" table="STORE">
+        <id name="store_no">
+            <column name="store_no" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="store_name">
+            <column name="STORE_NAME" />
+        </property>
+        
+        <property name="phone">
+            <column name="PHONE" />
+        </property>
+        
+        <property name="address">
+            <column name="ADDRESS" />
+        </property>
+        
+        <property name="final_update">
+            <column name="FINAL_UPDATE" />
+        </property>
+       
+        	<set name="store_in_classs" table="store_in_class" lazy="true" inverse="false" cascade="save-update">
+        	<key><column name="store_no"/></key>
+        	<one-to-many class="module.model._21_Store_In_ClassVO"/>
+       	</set>
+        
+       
+       	<set name="evaluates" table="evaluate" lazy="true" inverse="false">
+        	<key><column name="e_store"/></key>
+        	<one-to-many class="module.model._08_EvaluateVO"/>
+       	</set>
+       
+        <set name="group_records" table="group_record" lazy="true" inverse="false">
+        	<key><column name="group_store"/></key>
+        	<one-to-many class="module.model._16_Group_RecordVO"/>
+        </set>
+       
+       	<set name="items" table="item" lazy="true" inverse="false">
+        	<key><column name="store_no"/></key>
+        	<one-to-many class="module.model._12_ItemVO"/>
+       	</set>
+       
+      
+        
+        <many-to-one name="employeeVO" class="module.model._04_EmployeeVO" lazy="false">
+               <column name="creater"/>
+        </many-to-one>
+       
+       <property name="public_state">
+            <column name="public_state" />
+        </property>
+        <many-to-one name="use_by_group" class="module.model._07_StoreVO">
+        	<column name="use_by_group"/>
+        </many-to-one>
+       
+         	<set name="stores" table="store" lazy="true" inverse="false" >
+        	<key><column name="use_by_group"/></key>
+        	<one-to-many class="module.model._07_StoreVO"/>
+       	</set>
+       
+       
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/20 ?U?? 03:41:29 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+
+
+    <class name="module.model._06_Store_ClassVO" table="STORE_CLASS">
+        <id name="class_no">
+            <column name="class_no" />
+            <generator class="identity" />
+        </id>
+        <property name="class_name">
+            <column name="CLASS_NAME" />
+        </property>
+        
+       <set name="store_in_classs" table="store_in_class" lazy="true" cascade="save-update">
+       		<key><column name="class_store"/></key>
+       		<one-to-many class="module.model._21_Store_In_ClassVO"/>
+       </set>
+        
+    </class>
+</hibernate-mapping>

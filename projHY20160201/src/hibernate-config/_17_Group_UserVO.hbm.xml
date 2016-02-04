@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/20 ?U?? 01:58:44 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._17_Group_UserVO" table="group_user">
+        <id name="group_user_no">
+            <column name="group_user_no" />
+            <generator class="identity" />
+        </id>
+        <set name="order_Details" table="order_detail" lazy="true" cascade="all" inverse="true" order-by="detail_no">
+        	<key column="group_user_no"></key>
+        	<one-to-many class="module.model._18_Order_DetailVO"/>
+        </set>
+        
+        
+<!--         <property name="group_no" column="group_no"></property> -->
+<!--         <property name="group_user_id" column="group_user_id"></property> -->
+        <property name="group_user_name">
+            <column name="group_user_name" />
+            </property>
+		<property name="co_holder">
+            <column name="co_holder" />
+            </property>
+        <property name="user_amount">
+            <column name="user_amount" />
+            </property>
+        <property name="user_amount_after">
+            <column name="user_amount_after" />
+            </property>
+        <property name="order_time">
+            <column name="order_time" />
+            </property>
+        <many-to-one name="group_RecordVO" class="module.model._16_Group_RecordVO" lazy="false">
+        	<column name="group_no"></column>
+        </many-to-one>
+        <many-to-one name="employeeVO" class="module.model._04_EmployeeVO" lazy="false">
+        	<column name="group_user_id"></column>
+        </many-to-one>
+        
+
+        
+    </class>
+</hibernate-mapping>

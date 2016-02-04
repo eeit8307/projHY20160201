@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/20 ?U?? 03:46:21 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._08_EvaluateVO" table="EVALUATE">
+   
+        <id name="e_record">
+            <column name="E_RECORD" />
+            <generator class="identity" />
+        </id>
+        <property name="rank">
+            <column name="RANK" />
+        </property>
+        <property name="content">
+            <column name="CONTENT" />
+        </property>
+        <property name="evaluate_time">
+            <column name="EVALUATE_TIME" />
+        </property>
+
+        
+        <many-to-one name="employeeVO" class="module.model._04_EmployeeVO" lazy="false">
+        	<column name="e_user"/>
+        </many-to-one>
+        
+        <many-to-one name="storeVO" class="module.model._07_StoreVO" lazy="false">
+        	<column name="e_store"/>
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

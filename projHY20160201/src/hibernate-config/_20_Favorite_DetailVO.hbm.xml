@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/20 ?U?? 02:46:51 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._20_Favorite_DetailVO" table="favorite_detail">
+                 <!--第一個欄位 主鍵 -->
+        <id name="detail_no" column="detail_no" >          
+            <generator class="identity" />
+        </id>
+        
+       			 <!--第二個欄位 多對一 (19表)  -->
+        <many-to-one name="favorite_no" class="module.model._19_FavoriteVO" lazy="false">                                                  
+        	<column name="favorite_no"></column>
+        </many-to-one>
+        
+                  <!--第三個欄位 多對一 (11表)  -->
+        <many-to-one name="class3_no" class="module.model._11_Class_ThirdVO" lazy="false">                                                                                         
+        	<column name="class3_no"></column>
+        </many-to-one>
+       			 <!--第四個欄位  -->
+        <property name="extra" column="extra"/>
+        
+<!--          <many-to-one name="填自己的VO變數(物件)" class="module.model._19_FavoriteVO" lazy="false">                                                   -->
+<!--         	<column name="填資料庫表格的欄位"></column> -->
+<!--         </many-to-one> -->
+    </class>
+</hibernate-mapping>

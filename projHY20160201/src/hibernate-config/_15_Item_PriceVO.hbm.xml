@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/13 ?U?? 03:33:50 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._15_Item_PriceVO" table="item_price">
+        <id name="price_no">
+            <column name="price_no" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="itemVo" class="module.model._12_ItemVO" lazy="false">
+        	<column name="item_no"/>
+        </many-to-one>
+        <many-to-one name="sizeVO" class="module.model._14_SizeVO" lazy="false">
+        	<column name="size_no"/>
+        </many-to-one>
+
+        <property name="iprice" column="iprice"/>
+        
+        
+        
+        
+        
+    </class>
+</hibernate-mapping>

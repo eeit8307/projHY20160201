@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/20 ?U?? 01:58:44 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._16_Group_RecordVO" table="GROUP_RECORD">
+       	<id name="group_no">
+            <column name="group_no" />
+            <generator class="identity" />
+        </id>
+        
+        <set name="group_Users" table="group_user" lazy="true" cascade="all" inverse="false">
+        	<key column="group_no"></key>
+        	<one-to-many class="module.model._17_Group_UserVO"/>
+        </set>
+        
+         
+        
+<!--         <property name="holder" column="holder"></property> -->
+<!--         <property name="group_store" column="group_store"></property> -->
+        <property name="group_name">
+            <column name="GROUP_NAME" />
+        </property>
+        <property name="start_date">
+            <column name="START_DATE" />
+        </property>
+        <property name="end_date">
+            <column name="END_DATE" />
+        </property>
+        <property name="ann">
+            <column name="ANN" />
+        </property>
+        <property name="group_amount">
+            <column name="GROUP_AMOUNT" />
+        </property>
+        <property name="group_amount_after">
+            <column name="GROUP_AMOUNT_AFTER" />
+        </property>
+        <property name="status">
+            <column name="STATUS" />
+        </property>
+        <property name="failure">
+            <column name="FAILURE" />
+        </property>
+        <property name="discount">
+            <column name="discount" />
+        </property>
+        <property name="shipment">
+            <column name="shipment" />
+        </property>
+         
+        
+        <many-to-one name="employeeVO" class="module.model._04_EmployeeVO" lazy="false">
+        	<column name="holder"></column>
+        </many-to-one>
+        <many-to-one name="storeVO" class="module.model._07_StoreVO" lazy="false">
+        	<column name="group_store"></column>
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

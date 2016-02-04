@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/27 ?U?? 08:35:58 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._19_FavoriteVO" table="FAVORITE">
+        <id name="favorite_no" column="FAVORITE_NO">
+            <generator class="identity" />
+        </id>
+        <property name="favorite_name" column="FAVORITE_NAME">
+        </property>
+		<many-to-one name="employeeVO" class="module.model._04_EmployeeVO" lazy="false">
+			<column name="user_id" />
+		</many-to-one>
+		<set name="fdvo" table="favorite_detail" lazy="true" cascade="all" inverse="false">
+        	<key><column name="favorite_no" /></key>
+        	<one-to-many class="module.model._20_Favorite_DetailVO"/>
+        </set>
+        
+      
+    </class>
+</hibernate-mapping>

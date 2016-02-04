@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/21 ?U?? 07:48:56 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._04_EmployeeVO" table="EMPLOYEE">
+        <id name="user_id" column="user_id" >
+        </id>
+        <property name="c_name" column="c_name"/>
+        <property name="name" column="name"/>
+        <property name="comp_id" column="comp_id"/>
+        <property name="email" column="email"/>
+        <property name="title" column="title"/>
+        <property name="level" column="level"/>
+		<many-to-one name="organizationVO" class="module.model._01_OrganizationVO" lazy="false">
+		<column name="dep_id"/>
+		</many-to-one>
+        <many-to-one name="employee_StatusVO" class="module.model._02_Employee_StatusVO" lazy="false">
+        	<column name="status"/>
+        </many-to-one>		
+        <many-to-one name="jobVO" class="module.model._03_JobVO">
+        	<column name="job"/>
+        </many-to-one>
+
+        <set name="adms" table="admin" lazy="true" cascade="all" inverse="false">
+        	<key><column name="user_id" /></key>
+        	<one-to-many class="module.model._05_AdminVO"/>
+        </set>
+		<set name="Stores" table="store" lazy="true" cascade="all" inverse="false">
+        	<key><column name="creater" /></key>
+        	<one-to-many class="module.model._07_StoreVO"/>
+        </set>
+		<set name="Evas" table="evaluate" lazy="true" cascade="all" inverse="false">
+        	<key><column name="e_user" /></key>
+        	<one-to-many class="module.model._08_EvaluateVO" />
+        </set>
+		<set name="grs" table="group_record" lazy="true" cascade="all" inverse="false">
+        	<key><column name="holder" /></key>
+        	<one-to-many class="module.model._16_Group_RecordVO"/>
+        </set>
+		<set name="gus" table="group_user" lazy="true" cascade="all" inverse="false">
+        	<key><column name="group_user_id" /></key>
+        	<one-to-many class="module.model._17_Group_UserVO"/>
+        </set>
+        <set name="fvo" table="favorite" lazy="true" cascade="all" inverse="false">
+        	<key><column name="user_id" /></key>
+        	<one-to-many class="module.model._19_FavoriteVO"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/19 ?U?? 05:16:20 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._10_Class_SecondVO" table="class_second">    
+					<!--第一個欄位 PK  -->
+        <id name="class2_no" column="CLASS2_NO">
+			<generator class="identity"/>
+		</id>
+       				<!--第二個欄位-->
+        <property name="class2_name" column="CLASS2_NAME" />	
+                    <!--第三個欄位  FK-->
+<!--         <property name="class1_no" column="CLASS1_NO" /> -->
+      	
+					<!-- 多對一   9表-->
+		<many-to-one name="class_FirstVO" class="module.model._09_Class_FirstVO" lazy="false">
+            <column name="class1_no" />
+        </many-to-one>
+
+
+				    <!-- 一對多  11表 --> 
+       	<set name="class_Thirds" table="CLASS_THIRD " lazy="true" cascade="all"  inverse="false" >			
+			<key>
+				<column name="class2_no" />
+			</key>
+			<one-to-many class="module.model._11_Class_ThirdVO" />			                    	
+		</set>		
+
+    </class>
+</hibernate-mapping>

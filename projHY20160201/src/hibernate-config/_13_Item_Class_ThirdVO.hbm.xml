@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/19 ?U?? 05:16:20 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._13_Item_Class_ThirdVO" table="item_class_third">  
+                 	 
+	       <composite-id>
+		       	<key-many-to-one name="itemVO" class="module.model._12_ItemVO" lazy="false">
+		       		<column name="ITEM_NO"/>
+		       	</key-many-to-one>
+		       	<key-many-to-one name="class_ThirdVO" class="module.model._11_Class_ThirdVO" lazy="false">
+		       		<column name="CLASS3_NO"/>
+		       	</key-many-to-one>
+	       </composite-id> 	 
+        
+					 <!--第三個欄位  -->
+        <property name="class3_name" column="CLASS3_NAME" />
+        			 <!--第四個欄位  -->
+        <property name="extra" column="EXTRA" />
+        
+					<!-- 多對一   12表-->
+<!-- 		<many-to-one name="ItemVO" class="com.iii.model._12_item.ItemVO" lazy="false">                                               -->
+<!--             <column name="item_no" /> -->
+<!--         </many-to-one> -->
+
+					<!-- 多對一   13表-->
+<!-- 		<many-to-one name="Item_Class_ThirdVO" class="com.iii.model._13_item_class_third.Item_Class_ThirdVO" lazy="false">                                      -->
+<!--             <column name="class3_no" /> -->
+<!--         </many-to-one> -->
+				  
+
+    </class>
+</hibernate-mapping>

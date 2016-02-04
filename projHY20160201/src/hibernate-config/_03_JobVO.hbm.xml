@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/21 ?U?? 07:48:56 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._03_JobVO" table="JOB">
+        <id name="job_no" column="job_no">
+        </id>
+        <property name="job_name" column="job_name"/>
+        <set name="emps" table="employee" lazy="true" cascade="all" inverse="false">
+        	<key><column name="job" /></key>
+        	<one-to-many class="module.model._04_EmployeeVO"/>
+       </set>
+    </class>
+</hibernate-mapping>

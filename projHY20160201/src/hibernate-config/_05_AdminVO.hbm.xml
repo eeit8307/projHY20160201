@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/21 ?U?? 07:48:56 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._05_AdminVO" table="ADMIN">
+        <id name="admin_no" column="admin_no">
+            <generator class="identity" />
+        </id>
+        <property name="auth" column="auth"/>
+		<many-to-one name="employeeVO" class="module.model._04_EmployeeVO" lazy="false">
+			<column name="user_id" />
+		</many-to-one>
+    </class>
+</hibernate-mapping>

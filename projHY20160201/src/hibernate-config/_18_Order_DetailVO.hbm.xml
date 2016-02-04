@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016/1/20 ?U?? 02:46:51 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="module.model._18_Order_DetailVO" table="ORDER_DETAIL">
+       
+        <id name="detail_no" column="detail_no" >          
+            <generator class="identity" />
+        </id>
+        <many-to-one name="group_userVO" class="module.model._17_Group_UserVO" lazy="false">
+        	<column name="group_user_no"></column>
+        </many-to-one>
+<!--         <property name="group_user_no" column="group_user_no"/> -->
+        <property name="ostore_name" column="ostore_name"/>
+        <property name="oprice_no" column="oprice_no"/>
+        <property name="oitem_name" column="oitem_name"/>
+        <property name="oimage" column="oimage"/>
+        <property name="oprice" column="oprice"/>
+        <property name="oprice_after" column="oprice_after"/>     
+        <property name="oclass" column="oclass"/>
+        <property name="ps" column="ps"/>
+        <property name="quantity" column="quantity"/>
+        <property name="pay_status" column="pay_status" />
+        <property name="take_status" column="take_status" />
+	
+    </class>
+</hibernate-mapping>
