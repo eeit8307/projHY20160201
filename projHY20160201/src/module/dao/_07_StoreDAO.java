@@ -81,7 +81,7 @@ public class _07_StoreDAO implements _07_Store_InterfaceDAO {
 ////			bean.setStoreVO(storeVO);
 //	   		bean.setStore_name("asfasf");
 //	   		dao.insert(bean);
-//			
+			
 			
 			
 			

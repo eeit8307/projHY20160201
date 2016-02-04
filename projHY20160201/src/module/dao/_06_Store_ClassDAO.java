@@ -2,12 +2,9 @@ package module.dao;
 
 import java.util.List;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-
 import module.model._06_Store_ClassVO;
-import module.model._07_StoreVO;
 import module.util.HibernateUtil;
 
 public class _06_Store_ClassDAO implements _06_Store_Class_InterfaceDAO {

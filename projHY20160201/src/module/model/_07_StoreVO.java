@@ -23,7 +23,7 @@ public class _07_StoreVO implements java.io.Serializable {
 	private String address;                         
 	private Date final_update;
 	private _04_EmployeeVO employeeVO;
-	private String public_state;
+	private String public_state = "2";
 	private _07_StoreVO use_by_group;
 	public Integer getStore_no() {
 		return store_no;
